@@ -42,7 +42,7 @@
     --background-color: #F4F4F4;
     --accent-color-1: #B71B1C; 
     --accent-color-2: #FFFFFF;
-    --accent-color-3: #1D1D1D;
+    --accent-color-3: #3c4a93;
     --accent-color-4: #fff9f9;
     --font-1: "Raleway", sans-serif;
     --font-2: "Noto Sans", sans-serif; 
@@ -126,7 +126,7 @@ ul{
 }
 
 .bg-accent-color-3 {
-    background-color: var(--accent-color-3);
+    background-color: #1b1b1b;
 }
 
 .bg-accent-color-4 {
@@ -504,27 +504,10 @@ textarea.error-border{
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     padding: 17em 1em 4em 1em;
+    height: 100vh;
 }
-
-.banner-img-2{
-    background-image: url('../image/banner-2.jpg');
-    background-size: cover;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 17em 1em 12em 1em;
-}
-
-.banner-img-3{
-    background-image: url('../image/banner-3.jpg');
-    background-size: cover;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 18em 1em 15em 1em;
-}
-
 .event-banner{
     background-image: url('../image/multiracial-doctor-in-white-uniform-and-medical-ma-2024-11-13-11-28-38-utc.jpg') ;
     background-size: cover;
@@ -537,8 +520,6 @@ textarea.error-border{
     height: 100%;
     padding: 40px;
 }
-
-
 .find-donation-bg{
     background-image: url('../image/smiling-redhead-man-in-transfusion-set-and-blood-p-2024-11-07-15-13-21-utc.jpg');
     background-position: center;
@@ -554,7 +535,11 @@ textarea.error-border{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.clint-banner{
+    position: absolute;
+    bottom: 80px;
+    left: 10%;
+}
 .space-header{
     display: block;
     height: 150px;
@@ -567,10 +552,25 @@ textarea.error-border{
 .banner-heading-2{
     padding-right: 50%;
 }
-
+#header{
+        position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 6;
+      background-color: transparent;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+#header.scrolled {
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+#header.scrolled .nav-link{
+    color: #000;
+}
 .logo{
     max-width: 90%;
-    width: 250px;
+    width: 85px;
 }
 
 .partner-logo{
@@ -925,19 +925,151 @@ textarea.error-border{
     align-items: center;
     text-align: center;
 }
+.services-sec{
+    margin-top: 100px;
+}
+.modern-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+  background: #111;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+}
+
+.modern-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.modern-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 1s ease;
+  z-index: 1;
+}
+
+.modern-card:hover .modern-bg {
+  transform: scale(1.1);
+}
+
+.services-sec .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 2;
+}
+
+.modern-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.4s ease;
+}
+
+.modern-card:hover .modern-icon {
+  background: var(--accent-color-1);
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+.modern-content {
+  position: relative;
+  z-index: 4;
+  padding: 30px;
+  text-align: left;
+}
+
+.modern-content h4 {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.modern-content p {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modern-link {
+  font-weight: 600;
+  color: var(--accent-color-1);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.modern-link i {
+  transition: transform 0.3s ease;
+}
+
+.modern-link:hover i {
+  transform: translateX(4px);
+}
+.gallery-card {
+  height: 300px;
+  border-radius: 16px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-card .overlay {
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .overlay {
+  opacity: 1;
+}
+.swipertestimonial .swiper-slide img{
+    width: 100%;
+    max-width: 100%;
+}
+.view-icon {
+  background: #fff;
+  color: var(--main);
+  font-size: 24px;
+  padding: 14px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.view-icon:hover {
+  background: var(--main);
+  color: #fff;
+}
 
 .video-container-bg {
     position: relative;
     width: 100%;
     max-width: 1440px;
     height: 450px;
-    background-image: url('../image/redhead-volunteer-with-blood-pressure-cuff-and-tra-2024-11-07-16-33-21-utc.jpg');
     border-radius: 10px;
     margin: 2em auto -14em auto;
     padding: 10em 1em 10em 1em;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .video-overlay{

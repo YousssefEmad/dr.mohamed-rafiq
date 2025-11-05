@@ -1,3 +1,13 @@
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter");
 
@@ -87,3 +97,11 @@ $(function(){
     });
     elements.forEach(el => observer.observe(el));    
 });
+  Fancybox.bind("[data-fancybox]", {
+    Thumbs: false,
+    Toolbar: {
+      display: ["close"],
+    },
+    dragToClose: true,
+    animated: true,
+  });
