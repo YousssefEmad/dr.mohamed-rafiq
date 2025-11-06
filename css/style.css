@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
-@import url('../css/vendor/bootstrap.min.css');
-@import url('../css/vendor/fontawesome.css');
-@import url('../css/vendor/brands.css');
-@import url('../css/vendor/regular.css');
-@import url('../css/vendor/solid.css');
-@import url('../css/vendor/swiper-bundle.min.css');
-@import url('../css/vendor/animate.min.css');
 
 @property --progress {
     syntax: '<integer>';
@@ -116,7 +108,19 @@ ul{
     margin-left: auto;
     overflow: hidden;
 }
-
+.breadcrumb{
+    padding-top: 150px;
+    height: 35vh;
+}
+.breadcrumb ul li {
+    color: var(--accent-color-2);
+    font-weight: 600;
+}
+.breadcrumb ul li a{
+    text-decoration: none;
+    color: var(--accent-color-1);
+    font-weight: 600;
+}
 .bg-accent-color-1 {
     background-color: var(--accent-color-1);
 }
@@ -521,11 +525,11 @@ textarea.error-border{
     padding: 40px;
 }
 .find-donation-bg{
-    background-image: url('../image/smiling-redhead-man-in-transfusion-set-and-blood-p-2024-11-07-15-13-21-utc.jpg');
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 50vh;
 }
 
 .start-donating-banner{
@@ -859,7 +863,7 @@ textarea.error-border{
 
 .image-wrapper{
     width: 100%;
-    height: 100%;
+    height: 330px;
     position: relative;
     transition: transform 0.4s ease;
 }
@@ -892,7 +896,6 @@ textarea.error-border{
 .image-container img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: all 0.4s ease;
 }
 
@@ -1162,7 +1165,11 @@ textarea.error-border{
     color: var(--accent-color-3);
     transition: all 0.3s ease;
 }
-
+.detail-list a{
+    color: var(--accent-color-3);
+    font-size: 16px;
+    font-weight: 500;
+}
 .detail-list:hover{
     color: var(--accent-color-1);
 }
@@ -1307,11 +1314,31 @@ textarea.error-border{
     color: var(--accent-color-1);
     font-size: 14px;
 }
+footer .logo{
+    width: auto;
+    max-width: auto;
+}
+
+footer .overlay {
+    background: #1d1d1deb;
+}
+.footer-sec{
+    position: relative;
+    background-attachment: fixed;   
+}
+.footer-sec .hero-container{
+    position: relative;
+    z-index: 2;
+}
 .footer-list{
     list-style: none;
     padding-left: 0;
 }
-
+.copy-right a{
+    color: #a6988f;
+    font-weight: 500;
+    transition: all 0.2s;
+}
 .footer-list li{
     position: relative;
     display: flex;
@@ -1333,7 +1360,167 @@ textarea.error-border{
 .footer-list a:hover{
     color: var(--accent-color-1);
 }
-
+.serv-details img{
+    height: 560px;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+.blog-det img{
+    height: 560px;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+.more-blog-img img{
+        height: 130px;
+}
+.floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        /* Main Floating Button */
+        .floating-main {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color-1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .floating-main:hover {
+            background-color: #B71C1C;
+            transform: translateY(-5px);
+        }
+        
+        .floating-main i {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-main.active i {
+            transform: rotate(45deg);
+        }
+        
+        .floating-button {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color-3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+            position: relative;
+        }
+        
+        .floating-button:hover {
+            background-color: var(--accent-color-1);
+            transform: translateY(-3px);
+        }
+        
+        .floating-button.show {
+            opacity: 1;
+            transform: translateY(0px) translateX(-4px) scale(1);
+        }
+        
+        .floating-button i {
+            font-size: 20px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            left: 60px;
+            background-color: var(--accent-color-2);
+            color: #000;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .tooltip:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -5px;
+            transform: translateY(-50%);
+            border-width: 5px 5px 5px 0;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--accent-color-2);
+        }
+        
+        .floating-button:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Animation delays for each button */
+        .floating-button:nth-child(2) { transition-delay: 0.05s; }
+        .floating-button:nth-child(3) { transition-delay: 0.1s; }
+        .floating-button:nth-child(4) { transition-delay: 0.15s; }
+        .floating-button:nth-child(5) { transition-delay: 0.2s; }
+        .floating-button:nth-child(6) { transition-delay: 0.25s; }
+        
+        /* WhatsApp specific styling */
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Call specific styling */
+        .call-button {
+            background-color: #34B7F1;
+        }
+        
+        .call-button:hover {
+            background-color: #1280c4;
+        }
+        
+        .emergency-button {
+            background-color: #FF5252;
+            animation: pulse 2s infinite;
+        }
+        
+        .emergency-button:hover {
+            background-color: #D32F2F;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+            }
+        }
 @media screen and (max-width: 1024px){
     h1{
         font-size: 68px;
@@ -1361,9 +1548,11 @@ textarea.error-border{
     button, a{
         font-size: 14px;
     }
-
+    #header.scrolled .nav-link {
+    color: #fff;
+}
     .navbar{
-        background-color: var(--accent-color-3);
+        background-color: #000;
         position: relative;
     }
 
